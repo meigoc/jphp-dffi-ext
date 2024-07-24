@@ -1,5 +1,16 @@
 # DFFI 2.0
 DevelNext Foreign Function Interface 2.0
+⚠ Это последняя собранная версия оригинального jphp-dffi-ext (в 1.0.1 версии нет, то что вы увидите ниже)
+
+**Что нового?**
+
++ DFFIConsole
+для удобства использования нового класса используйте [org.meigo.Colors](https://github.com/meigoc/Colors)
+
+[Remove jfx & awt dependencies, upgrade jna to 5.5, add DFFIConsole util class.](https://github.com/jphp-group/jphp-dffi-ext/commit/6b561fab506ac3e850f994ef278c00344de59dee)
+[DFFIConsole new methods.](https://github.com/jphp-group/jphp-dffi-ext/commit/11306ac801d4933249339cc6bc7e5f8b4997d604)
+[Fix bugs in dfficonsole.](https://github.com/jphp-group/jphp-dffi-ext/commit/04019ca293e969565727e18a46bf1046153f9d9e)
+
 
 ## API Documentation
 [api-docs , Документация](api-docs/)
