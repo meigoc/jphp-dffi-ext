@@ -21,6 +21,12 @@ DevelNext Foreign Function Interface 2.0
 ## Bundle for DevelNext
 [Download , СКАЧАТЬ](https://github.com/meigoc/jphp-dffi-ext/releases)
 
+## JPPM Bundle
+```
+качаем
+jppm publish
+```
+
 ## Examples
 
 ### MessageBox
