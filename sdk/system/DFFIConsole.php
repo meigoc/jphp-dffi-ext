@@ -2,32 +2,55 @@
 namespace system;
 
 /**
- * System utils for os console
- *
  * Class DFFIConsole
  * @package system
  */
 class DFFIConsole
 {
-    /**
-     * Enable colors in console (for Windows)
-     * @return bool
+	/**
+     * @return any
      */
-    public static function enableColors(): bool
-    {
-    }
-
-    /**
-     * @return bool
+	public function isXTerm() {}
+	
+	/**
+     * @return any
      */
-    public static function isXTerm(): bool
-    {
-    }
-
-    /**
-     * @return bool
+	public function hasColorSupport() {}
+	
+	/**
+     * @return any
      */
-    public static function hasColorSupport(): bool
-    {
-    }
+	public function getWidth() {}
+	
+	/**
+     * @return any
+     */
+	public function eraseScreen() {}
+	
+	/**
+     * @return any
+     */
+	public function eraseLine() {}
+	
+	/**
+     * @return any
+	 * @param int $row
+	 * @param int $column
+     */
+	public function cursor($row, $column) {}
+	
+	/**
+     * @return any
+     */
+	public function reset() {}
+	
+	/**
+     * @return any
+     */
+	public function enableColors() {}
+	
+	/**
+     * @return any
+     */
+	public function enableColorsForWindows() {}
 }
