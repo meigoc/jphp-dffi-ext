@@ -4,11 +4,13 @@ import com.sun.jna.Function;
 import com.sun.jna.platform.win32.WinDef;
 import com.sun.jna.platform.win32.WinNT;
 import org.develnext.jphp.ext.system.DFFIExtension;
+import org.fusesource.jansi.Ansi;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.lang.BaseObject;
 import php.runtime.reflection.ClassEntity;
+import org.fusesource.jansi.AnsiConsole;
 
 @Reflection.Namespace(DFFIExtension.NS)
 public class DFFIConsole extends BaseObject {
@@ -61,6 +63,62 @@ public class DFFIConsole extends BaseObject {
         }
 
         return isColorSupport = false;
+    }
+
+    @Signature
+    public static int getWidth() {
+        AnsiConsole.systemInstall();
+        int width = AnsiConsole.getTerminalWidth();
+        AnsiConsole.systemUninstall();
+        return width;
+    }
+
+    @Signature
+    public static boolean eraseScreen() {
+        try {
+            AnsiConsole.systemInstall();
+            Ansi.ansi().eraseScreen();
+            AnsiConsole.systemUninstall();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Signature
+    public static boolean eraseLine() {
+        try {
+            AnsiConsole.systemInstall();
+            Ansi.ansi().eraseLine();
+            AnsiConsole.systemUninstall();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Signature
+    public static boolean cursor(int row, int column) {
+        try {
+            AnsiConsole.systemInstall();
+            Ansi.ansi().cursor(row, column);
+            AnsiConsole.systemUninstall();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Signature
+    public static boolean reset() {
+        try {
+            AnsiConsole.systemInstall();
+            Ansi.ansi().reset();
+            AnsiConsole.systemUninstall();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Signature
